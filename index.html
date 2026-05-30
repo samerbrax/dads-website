@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategic Workplace Consulting — Independent Office Furniture Advisory</title>
+  <meta name="description" content="Independent, manufacturer-neutral office furniture and workplace consulting. 30 years of experience in design, BOQ, pricing comparison, and procurement advisory — delivered remotely." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #16243f;
+      --navy-soft: #1f3354;
+      --slate: #3a4a66;
+      --bronze: #b08d57;
+      --bronze-dark: #96763f;
+      --ink: #1f2933;
+      --muted: #5c6b7a;
+      --line: #e3e7ec;
+      --bg: #ffffff;
+      --bg-alt: #f6f7f9;
+      --bg-tint: #eef1f5;
+      --radius: 12px;
+      --maxw: 1120px;
+      --shadow: 0 8px 30px rgba(22, 36, 63, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--navy);
+      margin: 0 0 0.5em;
+    }
+
+    p { margin: 0 0 1em; }
+
+    a { color: var(--bronze-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { padding: 88px 0; }
+    .section--alt { background: var(--bg-alt); }
+
+    .eyebrow {
+      font-family: "Inter", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--bronze-dark);
+      margin: 0 0 12px;
+    }
+
+    .section-title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
+    .section-lead { color: var(--muted); max-width: 640px; font-size: 1.05rem; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn--primary { background: var(--bronze); color: #fff; }
+    .btn--primary:hover { background: var(--bronze-dark); box-shadow: 0 6px 18px rgba(176, 141, 87, 0.35); }
+    .btn--ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.4); }
+    .btn--ghost:hover { background: rgba(255,255,255,0.1); }
+
+    /* ===== Header / Nav ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .brand {
+      font-family: "Fraunces", serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+    .brand span { display: block; font-family: "Inter", sans-serif; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bronze-dark); font-weight: 600; margin-top: 2px; }
+    .brand:hover { text-decoration: none; }
+
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a {
+      color: var(--slate);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a.nav-link:hover { color: var(--navy); text-decoration: none; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      margin: 5px 0;
+      transition: 0.25s;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 60%, var(--slate) 130%);
+      color: #fff;
+      padding: 104px 0 96px;
+    }
+    .hero h1 { color: #fff; font-size: clamp(2.1rem, 5vw, 3.4rem); max-width: 14ch; }
+    .hero .lead {
+      font-size: 1.18rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 60ch;
+      margin-bottom: 8px;
+    }
+    .hero .intro {
+      color: rgba(255,255,255,0.72);
+      max-width: 62ch;
+      margin-bottom: 32px;
+    }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ===== Highlights ===== */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: -52px;
+      position: relative;
+      z-index: 5;
+    }
+    .hl-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      box-shadow: var(--shadow);
+    }
+    .hl-card .num { font-family: "Fraunces", serif; font-size: 1.6rem; color: var(--bronze-dark); margin-bottom: 4px; }
+    .hl-card .lbl { color: var(--muted); font-size: 0.92rem; }
+
+    /* ===== About ===== */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .about-grid ul { padding-left: 20px; color: var(--muted); margin: 0 0 16px; }
+    .about-grid li { margin-bottom: 8px; }
+    .callout {
+      background: var(--bg-tint);
+      border-left: 3px solid var(--bronze);
+      padding: 22px 24px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: var(--slate);
+      font-size: 1.02rem;
+    }
+
+    /* ===== Services ===== */
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 44px; }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px 28px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: #d6dbe2; }
+    .card .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bronze-dark);
+      margin-bottom: 12px;
+    }
+    .card h3 { font-size: 1.3rem; }
+    .card p { color: var(--muted); margin-bottom: 14px; }
+    .card .meta { font-size: 0.9rem; color: var(--slate); }
+    .card .meta strong { color: var(--navy); }
+
+    /* ===== Process ===== */
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin-top: 44px; counter-reset: step; }
+    .step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+    }
+    .step .n {
+      width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--navy); color: #fff;
+      border-radius: 50%;
+      font-family: "Fraunces", serif;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+    }
+    .step p { font-size: 0.95rem; color: var(--muted); margin: 0; }
+    .process-note { margin-top: 28px; color: var(--muted); font-style: italic; }
+
+    /* ===== Contact ===== */
+    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
+    .contact-info a { color: var(--bronze-dark); font-weight: 600; }
+    .disclaimer {
+      margin-top: 28px;
+      padding: 18px 20px;
+      background: var(--bg-tint);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    form { display: grid; gap: 16px; }
+    .field { display: grid; gap: 6px; }
+    label { font-size: 0.88rem; font-weight: 600; color: var(--slate); }
+    input, textarea {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      width: 100%;
+    }
+    input:focus, textarea:focus { outline: none; border-color: var(--bronze); box-shadow: 0 0 0 3px rgba(176,141,87,0.15); }
+    textarea { resize: vertical; min-height: 120px; }
+    .form-note { font-size: 0.82rem; color: var(--muted); margin: 0; }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 0 36px;
+    }
+    .footer-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
+    footer .brand, footer .brand span { color: #fff; }
+    footer .tagline { color: rgba(255,255,255,0.6); font-size: 0.95rem; margin-top: 8px; }
+    footer .copy { font-size: 0.85rem; color: rgba(255,255,255,0.45); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .highlights { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+    }
+    @media (max-width: 760px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        position: absolute;
+        top: 70px; left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+        padding: 8px 24px 20px;
+        display: none;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a.nav-link { padding: 12px 0; border-bottom: 1px solid var(--bg-alt); }
+      .nav-links .btn { margin-top: 12px; text-align: center; }
+      .cards { grid-template-columns: 1fr; }
+      .section { padding: 64px 0; }
+    }
+    @media (max-width: 520px) {
+      .highlights { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="wrap nav">
+      <a href="#top" class="brand">Strategic Workplace<span>Consulting</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#process" class="nav-link">How We Work</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="btn btn--primary">Request a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--bronze);">Independent · Manufacturer-Neutral</p>
+      <h1>Independent Office Furniture &amp; Workplace Consulting</h1>
+      <p class="lead">30 years of experience supporting office design, specification, and procurement — independently and professionally.</p>
+      <p class="intro">We help clients, designers, and developers make the right office furniture decisions. From layouts and BOQs to pricing comparison and manufacturer coordination, we provide end-to-end consulting services without being tied to any supplier.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn--primary">Request a Consultation</a>
+        <a href="#services" class="btn btn--ghost">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Highlights ===== -->
+  <div class="wrap">
+    <div class="highlights">
+      <div class="hl-card"><div class="num">30 Years</div><div class="lbl">Hands-on industry experience</div></div>
+      <div class="hl-card"><div class="num">$12M+</div><div class="lbl">Annual sales portfolios managed</div></div>
+      <div class="hl-card"><div class="num">Global</div><div class="lbl">American, European &amp; local manufacturers</div></div>
+      <div class="hl-card"><div class="num">Remote</div><div class="lbl">Online services — fast &amp; flexible</div></div>
+    </div>
+  </div>
+
+  <!-- ===== About ===== -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h2 class="section-title">Three decades inside the office furniture industry</h2>
+      <div class="about-grid" style="margin-top:36px;">
+        <div>
+          <p>With over 30 years of experience in the office furniture industry, the founder has held the position of Sales Department Manager in a leading company operating at the highest level of the market.</p>
+          <p style="color:var(--muted);">During this period, the founder:</p>
+          <ul>
+            <li>Managed the largest accounts in the market</li>
+            <li>Oversaw annual sales turnover exceeding USD 12 million</li>
+            <li>Represented major American and European office furniture manufacturers</li>
+            <li>Worked directly with the company's local manufacturing facilities</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:1.25rem;">Professional Background</h3>
+          <p style="color:var(--muted);">Led and managed a fully integrated department, including:</p>
+          <ul>
+            <li>Sales teams handling key accounts</li>
+            <li>Interior designers supporting client layouts and concepts</li>
+            <li>Installation teams and site technicians</li>
+            <li>Logistics &amp; administrative staff managing factory orders, deliveries, invoicing, and documentation</li>
+          </ul>
+          <div class="callout">This background provides a unique understanding of the full project lifecycle — from design and pricing to manufacturing, delivery, and installation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section class="section section--alt" id="services">
+    <div class="wrap">
+      <p class="eyebrow">Services</p>
+      <h2 class="section-title">End-to-end consulting, free of supplier bias</h2>
+      <p class="section-lead">Four focused services that protect the client's interest — efficient layouts, accurate documentation, optimized pricing, and smooth coordination.</p>
+
+      <div class="cards">
+        <div class="card">
+          <span class="tag">Service 01</span>
+          <h3>Design, Layouts &amp; Presentations</h3>
+          <p>Space planning and furniture layouts for open offices, private offices, meeting rooms, and executive areas — optimized for workflow, budget, and ergonomic &amp; circulation standards.</p>
+          <p class="meta"><strong>Deliverables:</strong> Layout plans, furniture zoning, seating-capacity analysis, presentation files (PDF / PowerPoint).</p>
+        </div>
+        <div class="card">
+          <span class="tag">Service 02</span>
+          <h3>Bill of Quantities (BOQ)</h3>
+          <p>Detailed BOQs with item descriptions, dimensions, finishes, quantities, and optional alternatives — fully aligned with approved layouts.</p>
+          <p class="meta"><strong>Deliverables:</strong> Editable Excel BOQ and a PDF BOQ ready for tendering — eliminating errors and missing items.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Service 03</span>
+          <h3>Quotation &amp; Price Comparison</h3>
+          <p>Quotations prepared across American manufacturers, European manufacturers, and local factories, with cost comparison, value engineering, and budget-optimization options.</p>
+          <p class="meta"><strong>Deliverables:</strong> Comparative pricing tables, a recommendation report, and budget-vs-specification analysis.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Service 04</span>
+          <h3>Client–Manufacturer Coordination</h3>
+          <p>Acting as the technical and commercial bridge — supporting clarifications, specification alignment, and negotiations so client requirements are clearly communicated.</p>
+          <p class="meta"><strong>Advisory role only.</strong> No furniture trading. Full transparency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Process ===== -->
+  <section class="section" id="process">
+    <div class="wrap">
+      <p class="eyebrow">How We Work</p>
+      <h2 class="section-title">A clear, fully remote process</h2>
+      <p class="section-lead">All services are delivered remotely, ensuring flexibility, speed, and cost efficiency.</p>
+
+      <div class="steps">
+        <div class="step"><div class="n">1</div><p>Client submits project brief and drawings</p></div>
+        <div class="step"><div class="n">2</div><p>Online meeting to understand requirements</p></div>
+        <div class="step"><div class="n">3</div><p>Preparation of layouts / BOQ / pricing</p></div>
+        <div class="step"><div class="n">4</div><p>Review and revisions</p></div>
+        <div class="step"><div class="n">5</div><p>Final delivery in professional formats</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section section--alt" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title">Request a consultation</h2>
+      <div class="contact-grid" style="margin-top:36px;">
+        <div class="contact-info">
+          <p style="color:var(--muted);">Share your project brief and we'll respond with the right next step — a layout, a BOQ, a pricing comparison, or an advisory call.</p>
+          <p style="margin-top:20px;"><strong>Email</strong><br />
+            <a href="mailto:nibrax@gmail.com">nibrax@gmail.com</a>
+          </p>
+          <div class="disclaimer">
+            This service covers consulting only. No furniture trading or product supply is included — ensuring fully independent, manufacturer-neutral advice.
+          </div>
+        </div>
+
+        <!--
+          ============================================================
+          CONTACT FORM — ONE STEP TO MAKE IT LIVE
+          ============================================================
+          1. Go to https://formspree.io and create a free account.
+          2. Create a new form; point its notifications to: nibrax@gmail.com
+          3. Formspree gives you an endpoint like:  https://formspree.io/f/abcdwxyz
+          4. Replace YOUR_FORM_ID below with that ID (the part after /f/).
+          Until then, the form will not send. Everything else works.
+          ============================================================
+        -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="field">
+            <label for="company">Company <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+            <input type="text" id="company" name="company" />
+          </div>
+          <div class="field">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" required placeholder="Tell us about your project — office size, scope, timeline, and what you need (layout, BOQ, pricing, advisory)."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Send Request</button>
+          <p class="form-note">We'll reply to the email you provide. Your details are used only to respond to your inquiry.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <span class="brand">Strategic Workplace<span>Consulting</span></span>
+        <p class="tagline">From design to procurement — independent office furniture consulting.</p>
+      </div>
+      <div class="copy">© <span id="year"></span> Strategic Workplace Consulting. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close menu after tapping a link (mobile)
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { links.classList.remove('open'); });
+    });
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
